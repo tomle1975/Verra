@@ -1,9 +1,8 @@
 ﻿using Verra.Employees.Domain.SeedWork;
 
-namespace Verra.Employees.Domain.Aggregates.EmployeeAggregate
+namespace Verra.Employees.Domain.Aggregates.EmployeeAggregate;
+
+public interface IEmployeeService
 {
-    public interface IEmployeeService
-    {
-        Task<Result<IEnumerable<Employee>>> GetEmployeesAsync(CancellationToken cancellation);
-    }
+    Task<Result<IEnumerable<Employee>>> GetEmployeesAsync(CancellationToken cancellation);
 }

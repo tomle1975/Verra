@@ -8,6 +8,11 @@ public interface IRepository<TContext, TEntity, in TEntityId>
     where TEntity : IAggregateRoot<TEntityId>
 {
     /// <summary>
+    /// Gets or sets database context.
+    /// </summary>
+    TContext Context { get; set; }
+
+    /// <summary>
     /// Gets all records of <see cref="TEntity" />.
     /// </summary>
     Task<IEnumerable<TEntity>> GetAll(CancellationToken cancellation);
@@ -31,9 +36,4 @@ public interface IRepository<TContext, TEntity, in TEntityId>
     /// Deletes the existing record of the <see cref="TEntity" />.
     /// </summary>
     Task Delete(TEntity entity, CancellationToken cancellation);
-
-    /// <summary>
-    /// Gets or sets database context.
-    /// </summary>
-    TContext Context { get; set; }
 }

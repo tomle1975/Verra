@@ -1,8 +1,7 @@
 ﻿using Verra.Employees.Domain.SeedWork;
 
-namespace Verra.Employees.Domain.Aggregates.EmployeeAggregate
+namespace Verra.Employees.Domain.Aggregates.EmployeeAggregate;
+
+public interface IEmployeeRepository<TContext> : IRepository<TContext, Employee, Guid> where TContext : new()
 {
-    public interface IEmployeeRepository<TContext> : IRepository<TContext, Employee, Guid> where TContext : new()
-    {
-    }
 }

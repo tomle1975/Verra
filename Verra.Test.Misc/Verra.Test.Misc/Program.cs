@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using System.Collections;
 using System.Text;
 
 Console.WriteLine("Hello, World!");
@@ -13,10 +12,7 @@ static string Reverse(string input)
     if (string.IsNullOrEmpty(input) || input.Length == 1) return input;
 
     var stringBuilder = new StringBuilder();
-    for (var i = input.Length - 1; i >= 0; i--)
-    {
-        stringBuilder.Append(input[i]);
-    }
+    for (var i = input.Length - 1; i >= 0; i--) stringBuilder.Append(input[i]);
 
     Console.WriteLine(DateTime.Now - start);
 
