@@ -25,7 +25,7 @@ public class EmployeeEfService : IEmployeeService
 
         try
         {
-            result.Data = await repository.GetAll(cancellation).ConfigureAwait(false);
+            result.Data = await repository.GetEmployeesAsync(cancellation).ConfigureAwait(false);
 
             result.IsSuccessful = true;
         }

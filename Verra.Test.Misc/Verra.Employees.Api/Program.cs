@@ -17,8 +17,8 @@ builder.Services.AddScoped<IEmployeeRepository<EmployeesEfDbContext>, EmployeeEf
 builder.Services.AddScoped<IValidator<Employee>, EmployeeValidator>();
 builder.Services.AddScoped<IRepositoryDataMapper<Employee, Db.Employee>, EmployeesRepositoryDataMapper>();
 builder.Services.AddScoped<IRepositoryDataMapper<EmployeePosition, Db.EmployeePosition>, EmployeePositionDataMapper>();
-builder.Services.AddScoped<IApiDataMapper<Employee, EmployeeDto>>();
-builder.Services.AddScoped<IApiDataMapper<EmployeePosition, EmployeePositionDto>>();
+builder.Services.AddScoped<IApiDataMapper<Employee, EmployeeDto>, EmployeeApiDataMapper>();
+builder.Services.AddScoped<IApiDataMapper<EmployeePosition, EmployeePositionDto>, PositionApiDataMapper>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

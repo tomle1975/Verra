@@ -30,7 +30,6 @@ public class EmployeeEfRepository : EfRepository<Employee, Guid, Db.Employee>, I
         this.positionDataMapper = positionDataMapper;
     }
 
-
     public Task<IEnumerable<Employee>> GetEmployeesAsync(CancellationToken cancellation)
     {
         var dbEmployees = Context.Employees?.Include(e => e.Positions).AsEnumerable().ToList();

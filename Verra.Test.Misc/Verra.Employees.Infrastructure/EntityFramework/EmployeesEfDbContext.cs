@@ -13,7 +13,13 @@ public class EmployeesEfDbContext : DbContext
     /// <summary>
     /// Gets or sets all positions.
     /// </summary>
-    public DbSet<EmployeePosition>? EmployeePositions { get; set; }
+    public DbSet<EmployeePosition>? Positions { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        // TODO: Need this to be configurable.
+        optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=Employees;Trusted_Connection=Yes;Encrypt=false");
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
