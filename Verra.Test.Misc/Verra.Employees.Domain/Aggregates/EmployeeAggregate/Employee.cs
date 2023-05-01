@@ -7,7 +7,16 @@ namespace Verra.Employees.Domain.Aggregates.EmployeeAggregate;
 /// </summary>
 public class Employee : Entity<Guid>, IAggregateRoot<Guid>
 {
-    public Employee(Guid id, string firstName, string lastName, string department, Guid projectId, string address, DateTime dob, string gender, string position, DateTime dateOfJoining, double salary)
+    public Employee(
+        Guid id,
+        string firstName,
+        string lastName,
+        string department,
+        Guid projectId,
+        Address address,
+        DateTime dob,
+        Gender gender,
+        List<EmployeePosition> positions)
     {
         Id = id;
         FirstName = firstName;
@@ -17,9 +26,7 @@ public class Employee : Entity<Guid>, IAggregateRoot<Guid>
         Address = address;
         Dob = dob;
         Gender = gender;
-        Position = position;
-        DateOfJoining = dateOfJoining;
-        Salary = salary;
+        Positions = positions;
     }
 
     /// <summary>
@@ -27,21 +34,38 @@ public class Employee : Entity<Guid>, IAggregateRoot<Guid>
     /// </summary>
     public string FirstName { get; set; }
 
+    /// <summary>
+    /// Gets or sets last name of the employee.
+    /// </summary>
     public string LastName { get; set; }
 
+    /// <summary>
+    /// Gets or sets department the employee works for.
+    /// </summary>
     public string Department { get; set; } // TODO: Need to have normalized database to store department information separately.
 
-    public Guid ProjectId { get; set; } // TODO: Need to consider this as another entity.
+    /// <summary>
+    /// Gets or sets project ID the employee currently works on.
+    /// </summary>
+    public Guid ProjectId { get; set; } // TODO: This design flaw as over the years an employee can work on more than one project.
 
-    public string Address { get; set; } // TODO: This is a complex entity and needs to be refactored.
+    /// <summary>
+    /// Gets or sets address of the employee.
+    /// </summary>
+    public Address Address { get; set; }
 
+    /// <summary>
+    /// Gets or sets date of birth of the employee.
+    /// </summary>
     public DateTime Dob { get; set; }
 
-    public string Gender { get; set; } // TODO: Need to represent gender as an Enumeration.
+    /// <summary>
+    /// Gets or sets gender of the employee.
+    /// </summary>
+    public Gender Gender { get; set; }
 
-    public string Position { get; set; } // TODO: consider reusability.
-
-    public DateTime DateOfJoining { get; set; }
-
-    public double Salary { get; set; }
+    /// <summary>
+    /// Gets all positions the employee has held.
+    /// </summary>
+    public List<EmployeePosition> Positions { get; set; }
 }
