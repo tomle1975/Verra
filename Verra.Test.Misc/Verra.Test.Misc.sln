@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Verra.Employees.Infrastruct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Verra.Employees.Api", "Verra.Employees.Api\Verra.Employees.Api.csproj", "{AE175D5B-9DE3-49A4-B4FA-6A9D9B482EE9}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Verra.Employees.SqlServer", "Verra.Employees.SqlServer\Verra.Employees.SqlServer.sqlproj", "{476ADA5F-D562-4709-AC19-B1815E7BF945}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,12 @@ Global
 		{AE175D5B-9DE3-49A4-B4FA-6A9D9B482EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE175D5B-9DE3-49A4-B4FA-6A9D9B482EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE175D5B-9DE3-49A4-B4FA-6A9D9B482EE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{476ADA5F-D562-4709-AC19-B1815E7BF945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{476ADA5F-D562-4709-AC19-B1815E7BF945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{476ADA5F-D562-4709-AC19-B1815E7BF945}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{476ADA5F-D562-4709-AC19-B1815E7BF945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{476ADA5F-D562-4709-AC19-B1815E7BF945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{476ADA5F-D562-4709-AC19-B1815E7BF945}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
